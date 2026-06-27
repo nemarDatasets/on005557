@@ -1,3 +1,5 @@
+[![DOI](https://img.shields.io/badge/DOI-10.82901%2Fnemar.on005557-blue)](https://doi.org/10.82901/nemar.on005557)
+
 ### Free Recall with Closed-Loop Stimulation at Encoding (Encoding Classifier)
 
 #### Description
