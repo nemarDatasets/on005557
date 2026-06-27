@@ -2,18 +2,38 @@
   "version": "2.0",
   "pipeline_stage": "validated",
   "title": "Free Recall with Closed-Loop Stimulation at Encoding (Encoding Classifier)",
+  "description": "This dataset contains intracranial electrophysiology recordings and behavioral data from a delayed free recall task with real-time closed-loop brain stimulation during encoding. Participants studied word lists, performed distractor arithmetic tasks, and freely recalled words while an L2 logistic regression classifier trained on encoding neural features guided stimulation delivery to optimize memory encoding. Data were collected across multiple clinical sites as part of a collaborative effort to investigate neural mechanisms of memory and the effects of targeted brain stimulation on recall performance.",
+  "methods_description": "Intracranial electrophysiology recordings were acquired during a delayed free recall task with closed-loop stimulation at encoding. Neural features were extracted using Morlet wavelet transformation (wavenumber = 5, 8 log-spaced wavelets between 3-180 Hz) applied to bipolar recordings in the 0-1366 ms interval after word presentation, following 58-62 Hz notch filtering. An L2 logistic regression classifier was trained on encoding data from prior FR1 sessions to predict subsequent recall. Classifier outputs were used to trigger 500 ms electrical stimulation pulses during encoding on designated lists. Stimulation parameters (anode/cathode labels, amplitude, pulse frequency, pulse width, pulse count) are documented in behavioral event files.",
   "license": "CC0",
   "dataset_type": "raw",
   "authors": {
     "Haydn G. Herrema": {},
     "Michael J. Kahana": {}
   },
-  "related_identifiers": [
+  "keywords": [
     {
-      "identifier": "10.18112/openneuro.ds005557.v1.0.0",
-      "identifier_type": "DOI",
-      "relation_type": "IsIdenticalTo"
+      "term": "intracranial electrophysiology"
     },
+    {
+      "term": "free recall"
+    },
+    {
+      "term": "closed-loop stimulation"
+    },
+    {
+      "term": "memory encoding"
+    },
+    {
+      "term": "brain-computer interface"
+    },
+    {
+      "term": "machine learning classification"
+    },
+    {
+      "term": "iEEG"
+    }
+  ],
+  "related_identifiers": [
     {
       "identifier": "https://github.com/nemarDatasets/on005557",
       "identifier_type": "URL",
@@ -33,6 +53,11 @@
       "identifier": "10.18112/openneuro.ds005489",
       "identifier_type": "DOI",
       "relation_type": "References"
+    },
+    {
+      "identifier": "10.18112/openneuro.ds005557.v1.0.0",
+      "identifier_type": "DOI",
+      "relation_type": "IsDerivedFrom"
     }
   ],
   "funding_references": [
@@ -43,45 +68,21 @@
     }
   ],
   "resource_type_general": "Dataset",
+  "resource_type_specific": "Neuroimaging Dataset",
   "modalities": [
     "beh",
     "ieeg"
   ],
-  "resource_type_specific": "Neuroimaging Dataset",
   "sizes": [
-    "0.0 KB (1 files)"
+    "37.2 GB (60 files)"
   ],
   "formats": [
     ".edf",
     ".json",
     ".md",
     ".tsv",
-    ".txt"
+    ".txt",
+    ".yml"
   ],
-  "description": "This dataset contains intracranial electrophysiology recordings and behavioral data from a delayed free recall task with real-time closed-loop brain stimulation during encoding. Participants studied word lists, performed distractor arithmetic tasks, and freely recalled words while an L2 logistic regression classifier trained on prior sessions predicted subsequent memory performance and triggered stimulation for low-confidence encoding events. Data were collected across multiple clinical sites as part of a collaborative memory research study.",
-  "methods_description": "Intracranial EEG recordings were acquired during a delayed free recall paradigm with closed-loop stimulation. Neural features were extracted using Morlet wavelet transformation (wavenumber=5, 8 log-spaced wavelets 3-180 Hz) applied to bipolar recordings during 0-1366 ms post-stimulus intervals after 58-62 Hz line noise removal. An L2 logistic regression classifier was trained on encoding data from prior sessions using leave-one-session-out cross-validation. Stimulation (500 ms duration) was triggered when classifier output fell below the median training value. Recordings were acquired using Blackrock (250 nV units) and Medtronic (0.1 µV units) systems.",
-  "keywords": [
-    {
-      "term": "intracranial EEG"
-    },
-    {
-      "term": "closed-loop stimulation"
-    },
-    {
-      "term": "free recall"
-    },
-    {
-      "term": "memory encoding"
-    },
-    {
-      "term": "brain-computer interface"
-    },
-    {
-      "term": "machine learning classification"
-    },
-    {
-      "term": "neural decoding"
-    }
-  ],
-  "source_hash": "213b2810388fcb75fa38160eaa2787956cbc3e03ef83da0f92bc3839d28c99da"
+  "source_hash": "d15a2f94750d40a7b47bcb727ebfe78bc5000357a30d8241ee7daa122d18f1dc"
 }
